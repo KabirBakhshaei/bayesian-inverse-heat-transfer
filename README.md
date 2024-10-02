@@ -15,13 +15,28 @@ To run the code, follow these steps:
 ### 1. Install OpenFOAM
 First, ensure that **OpenFOAM** is installed on your system. You can follow the official installation guide for your operating system from the [OpenFOAM website](https://www.openfoam.com/download).
 
+Supported versions:
+- [OpenFOAM 2106](https://www.openfoam.com/news/main-news/openfoam-v2106)
+- [OpenFOAM 2212](https://www.openfoam.com/news/main-news/openfoam-v2212)
+- [OpenFOAM 2306](https://www.openfoam.com/news/main-news/openfoam-v2306)
+- [OpenFOAM 2312](https://www.openfoam.com/news/main-news/openfoam-v2312)
+
+
 ### 2. Install ITHACA-FV
 After OpenFOAM is installed, you need to install **ITHACA-FV**, a library for reduced-order modeling in fluid dynamics. ITHACA-FV is required to run this project. You can find the ITHACA-FV repository [here](https://github.com/giovastabile/ITHACA-FV).
+
 
 To install ITHACA-FV:
 ```bash
 # Clone the repository
 git clone https://github.com/giovastabile/ITHACA-FV.git
 cd ITHACA-FV
+
+# Initialize submodules and source the bashrc
+git submodule update --init
+source etc/bashrc
+
+# Compile the library
+./Allwmake
 
 # Follow the installation instructions in the ITHACA-FV repository
