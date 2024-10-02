@@ -26,9 +26,6 @@ Supported versions:
 After OpenFOAM is installed, you need to install **ITHACA-FV**, a library for reduced-order modeling in fluid dynamics. ITHACA-FV is required to run this project. You can find more information about the ITHACA-FV repository and its installation details, please refer [here](https://github.com/giovastabile/ITHACA-FV).
 
 
-
-
-
 ## Project Structure
 
 The repository is divided into three main folders to organize the different scripts, results, and changes for running the simulation with different Radial Basis Functions (RBFs) incorporated into data assimilation.
@@ -39,28 +36,38 @@ This folder contains some modified files that need to be replaced in the ITHACA-
 
 #### Instructions for Replacing Files:
 
-1. After cloning the ITHACA-FV repository, navigate to the following directory inside the cloned ITHACA-FV repo:
+1. **Replace files in the ITHACA-FV repository**:
 
-    ```bash
-    cd ITHACA-FV/src/
-    ```
-
-2. Replace the following files with the corresponding files in the `Changed codes` folder:
-    - Replace `ensembleClass.C` with the modified `ensembleClass.C` from the `Changed codes` folder.
-    - Replace `ensembleClass.H` with the modified `ensembleClass.H` from the `Changed codes` folder.
-
-    Use the following commands to copy and replace the files:
+    a. Inside `ITHACA-FV/src/`, replace `ensembleClass.C`, `ensembleClass.H`, `muq2ithaca.C`, and `muq2ithaca.H` with the corresponding files from the `Changed codes` folder:
 
     ```bash
     cp /path/to/your/repo/Changed\ codes/ensembleClass.C ITHACA-FV/src/
     cp /path/to/your/repo/Changed\ codes/ensembleClass.H ITHACA-FV/src/
+    cp /path/to/your/repo/Changed\ codes/muq2ithaca.C ITHACA-FV/src/
+    cp /path/to/your/repo/Changed\ codes/muq2ithaca.H ITHACA-FV/src/
+    ```
+
+    b. Inside `ITHACA-FV/src/Fang2017filter_wDF`, replace `Fang2017filter_wDF.C` and `Fang2017filter_wDF.H` with the corresponding files from the `Changed codes` folder:
+
+    ```bash
+    cp /path/to/your/repo/Changed\ codes/Fang2017filter_wDF.C ITHACA-FV/src/Fang2017filter_wDF/
+    cp /path/to/your/repo/Changed\ codes/Fang2017filter_wDF.H ITHACA-FV/src/Fang2017filter_wDF/
+    ```
+    c. Inside `ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP`, replace `sequentialIHTP.C`, `sequentialIHTP.H`, and `createThermocouples.H` with the corresponding files from the `Changed codes` folder:
+
+    ```bash
+    cp /path/to/your/repo/Changed\ codes/sequentialIHTP.C ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP/
+    cp /path/to/your/repo/Changed\ codes/sequentialIHTP.H ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP/
+    cp /path/to/your/repo/Changed\ codes/createThermocouples.H ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP/
     ```
 
     **Explanation**:
     - Replace `/path/to/your/repo/` with the actual path where you have cloned your repository containing the `Changed codes` folder.
-    - The `cp` command copies the modified `ensembleClass.C` and `ensembleClass.H` files from the `Changed codes` folder to the `ITHACA-FV/src/` directory, replacing the original files.
+    - The `cp` command copies the modified files from the `Changed codes` folder to the appropriate directories in the ITHACA-FV and ITHACA-FV-KF repositories, replacing the original files.
 
-3. Once the files are replaced, recompile the ITHACA-FV library to ensure the changes take effect:
+3. **Recompile the ITHACA-FV and ITHACA-FV-KF libraries**:
+
+    After replacing the files, recompile the libraries to ensure the changes take effect.
 
 
 ### 2. `Data Assimilation _Multiquadric-RBF`
@@ -74,7 +81,7 @@ To run the simulation with the **Multiquadric RBF**, navigate to the `Data Assim
 ```bash
 cd Data\ Assimilation\ _Multiquadric-RBF
 python main.py
-
+```
 
 ### 3. `Data Assimilation _Gaussian-RBF`
 This folder contains:
@@ -87,3 +94,4 @@ To run the simulation with the **Gaussian RBF**, navigate to the `Data Assimilat
 ```bash
 cd Data\ Assimilation\ _Gaussian-RBF
 python main.py
+```
