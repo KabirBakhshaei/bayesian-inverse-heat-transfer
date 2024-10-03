@@ -73,25 +73,20 @@ This folder contains some modified files that need to be replaced in the ITHACA-
 ### 2. `Data Assimilation _Multiquadric-RBF`
 This folder contains:
 - **Main Scripts**: The scripts required to run the data assimilation simulation using **Multiquadric Radial Basis Functions (RBFs)**.
-- **Results**: The results from running the simulations, including relevant figures and plots.
-- **Figures**: Figures and visualizations included in the paper.
+- **Postprocessing Scripts**: Some other scripts for postprocessing.
+- **Figures**: Figures, plots and visualizations included in the paper.
 
-To run the simulation with the **Multiquadric RBF**, navigate to the `Data Assimilation _Multiquadric-RBF` folder and execute the following script:
+To run the simulation with the **Multiquadric RBF**, navigate to the `Data Assimilation _Multiquadric-RBF` folder and execute the related scripts for running and post processing:
 
-```bash
-cd Data\ Assimilation\ _Multiquadric-RBF
-python main.py
-```
 
 ### 3. `Data Assimilation _Gaussian-RBF`
 This folder contains:
 - **Main Scripts**: The scripts required to run the data assimilation simulation using Gaussian Radial Basis Functions (RBFs).
-- **Results**: The results from running the simulations, including relevant figures and plots.
-- **Figures**: Figures and visualizations included in the paper.
+- **Postprocessing Scripts**: Some other scripts for postprocessing.
+- **Figures**: Figures, plots and visualizations included in the paper.
 
-To run the simulation with the **Gaussian RBF**, navigate to the `Data Assimilation _Gaussian-RBF` folder and execute the following script:
+To run the simulation with the **Gaussian RBF**, navigate to the `Data Assimilation _Gaussian-RBF` folder and execute the related scripts for running and post processing:
 
-```bash
-cd Data\ Assimilation\ _Gaussian-RBF
-python main.py
-```
+
+### 4. `Other images`
+This folder contains some other images for the paper 
